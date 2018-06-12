@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ObserverPatternDemo
 {
-    //订阅者类
-    class Subscriber
+    //具体的订阅者类
+    class Subscriber:IObserver
     {
         public string Name { get; set; }
 
@@ -14,9 +14,9 @@ namespace ObserverPatternDemo
             this.Name = name;
         }
 
-        public void ReceiveAndPrintData(TenxunGame txGame)
+        public void ReceiveAndPrintData(TenXun tenXun)
         {
-            Console.WriteLine("Notified {0} of {1}'s" + " Info is: {2}", Name, txGame.Symbol, txGame.Info);
+            Console.WriteLine("Notified {0} of {1}'s" + " Info is: {2}", Name, tenXun.Symbol, tenXun.Info);
         }
     }
 }
